@@ -22,18 +22,17 @@ with open(key_file_path, "wb") as key_file:
 
 print(f"Encryption key saved to {key_file_path}")
 
-# Initialize the cipher with the key
+
 cipher = Fernet(key)
 
-# Read the file to encrypt
-file_to_encrypt = "file_to_encrypt.txt"  
+#read file
+file_to_encrypt = "file_to_encrypt.txt"  # enter your file
 with open(file_to_encrypt, "rb") as file:
     data = file.read()
 
 # Encrypt the file content
 encrypted_data = cipher.encrypt(data)
 
-# Save
 encrypted_file_path = "encrypted_file.txt"
 with open(encrypted_file_path, "wb") as encrypted_file:
     encrypted_file.write(encrypted_data)
